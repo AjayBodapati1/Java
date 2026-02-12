@@ -1,0 +1,1076 @@
+JDK - Java Development Kit that contains compiler which converts our source code to byte code
+IDE - Integrated Development Environment used to code our programs
+
+System.out,println("Hello\n");  -> Used to print our statement
+println -> Will make the next print/input start in new line
+\n -> will add a line next to our output
+
+Variables: reusable containers used to store the values. They act as if they are the value they store
+    - Primitive = simple values stored directly in memory (stack)   -> int, double, char, boolean, long, short, float
+    - Reference = memory address that points to (heap)  -> string, array, object
+
+    Ex: int age; -> declaration
+        age = 21; -> assignment
+        int age = 21; -> declaration with assignment
+
+    * Datatype of the value should be same as the variable declared with.
+    * Avoid enclosing variables in quotes while using in print statements else they are considered as a string.
+
+Data types: The type of data we use/store
+    - Int -> It is a integer -> 0, 12, -55
+    - Double -> It is a fractional number -> 1.2, 33.44, 12.0
+    - Char -> It is a single character enclosed in single quotes -> 'a','1, '@', " "
+    - Boolean -> It is either true or false -> true or false
+    - String -> It is the combination of characters enclosed in double quotes-> "I am Ajay"
+    Ex: {
+            String name = "Ajay";
+            int age = 21;
+            double gpa = 9.3;
+            char gender = 'M';
+            boolean isEmployed = true;
+
+            System.out.println("I am "+name+", "+age+" years old. I had a gpa of "+gpa+". "+isEmployed+", I am employed and "+gender+".");
+
+    }
+
+User Input - Scanner : It is an object in Java that helps in taking the user input. We need to import Scanner class from util package in java library.
+Ex:
+    import java.util.Scanner
+    Scanner sc = new Scanner(System.in);
+    String name = sc.nextLine();
+    sc.close();
+
+    * sc.nextLine() -> will read the whole input including spaces
+    * sc.next() -> will only read the first input word
+    * sc.nextInt() -> will read only the integer input
+    * sc.nextDouble() -> will read the float input
+    * sc.nextBoolean() -> will accept only true or false as input
+
+Arithmetic Operators:
+    + -> used for addition
+    - -> used for subtraction
+    * -> used for multiplication
+    / -> used for division
+    % -> used for storing remainder of a division
+    ** -> used for power (superscript)
+
+Augmented Assignment Operators:
+    x += y -> will add x with y and assign result to x
+    x -= y -> will subtract y from x and assign result to x
+    x *= y -> will multiply x with y and assign result to x
+    x /= y -> will divide x with y and assign result to x
+    x %= y -> will divide x with y and assign remainder to x
+
+Increment and Decrement Operators:
+    x++ -> will increment x (x += 1)
+    x-- -> will decrement x (x -= 1)
+
+* Operations are done in P-E-M-D-A-S order.
+    P -  enthesis
+    E - Exponents
+    M - Multiplication
+    D - Division
+    A - Addition
+    S - Subtraction
+
+If statements: performs the block of code if its condition is true
+    ex: if(age > 18) {
+            System.out.println("Eligible");
+        }
+Else statement: performs the block of code when the if's condition is false
+    ex: else{
+            System.out.println("NOT Eligible");
+    }
+Else-If statement: performs the block of code when the previous if's condition is false and it's condition is true.
+    ex: else if(age<0){
+                    System.out.println("Enter valid age");
+            }
+
+* var.isEmpty() -> checks if the string var is empty and returns the boolean result
+* var.isEquals("value") -> checks if the string var is equal to value and return thr boolean result
+
+Nested If: If statements inside If statements
+Ex: boolean isStudent = true;
+    boolean isAdult = true;
+
+    if(isStudent){
+        if(isAdult){
+            System.out.println("You are eligible");
+        }else{
+            System.out.println("You are NOT old enough");
+        }else{
+            System.out.println("You should be a student to join.");
+        }
+    }
+
+Random Number: The number that is generated randomly between given range.We need to import Random class from util package in java library.
+Ex:
+    import java.util.Random;
+    Random random = new Random();
+    int number1 = random.nextInt(a,b); /*a is inclusive and b is exclusive*/
+    double number2 = random.nextDouble(a,b); /*a is inclusive and b is exclusive*/
+    boolean toss = random.nextBoolean(); /*either true or false*/
+
+Math class: Contains various math values and functions.
+Ex : Math.PI -> 3.141592653589793
+     Math.E  -> 2.718281828459045
+     Math.pow(a,b) -> a**b
+     Math.abs(-a)  -> results positive of a
+     Math.sqrt(9)  -> √9 = 3
+     Math.round(3.14) -> rounds to nearest integer = 3
+     Math.ceil(3.14)  -> rounds to next integer = 4
+     Math.floor(3.78) -> rounds to before integer = 3
+     Math.max(a,b) -> results tha maximum among a & b
+     Math.min(a,b) -> results tha minimum among a & b
+
+Printf : Method used to format the output.
+        syntax -> %[flags][width][.precision][specific-character]
+            flags -> + (output a plus for positive number) = %+.2f
+                 , (grouping separator) = %,.2f
+                 ( (negative numbers are enclosed in parentheses) = %(.2f
+                 space (displays - if negative, space if positive) = % .2f
+            width -> 0 (o padding) = %04d
+                 number (right justified padding) = %4d
+                 negative number (left justified padding) = %-4d
+            precision ->   %.2f (formats the float to 2 decimal places)
+            specified-character -> %s (string), %c (character), %f (floats), %d (integer), %b (boolean)
+Ex:
+    String name = "Ajay";
+    double cgpa = 9.34;
+    System.out.printf("Hello! %s", name);
+    System.out.printf("You have CGPA of %.1f", cgpa);
+    double a = 22567.987;
+    double b = -22567.987;
+    int c = 22;
+    System.out.printf("%f\n", a);
+    System.out.printf("%.2f\n", a);
+    System.out.printf("%+.2f\n", a);
+    System.out.printf("%,.2f\n", a);
+    System.out.printf("% .2f\n", a);
+    System.out.printf("%(.2f\n", b);
+    System.out.printf("% .2f\n", b);
+    System.out.printf("%04d\n", c);
+    System.out.printf("%4d\n", c);
+    System.out.printf("%-4d\n", c);
+
+String Methods: In-built methods used on strings for multiple purposes
+Ex:
+    String name = "Ajay Bodapati";
+
+    name.length() -> will give us the length of string  = 13
+    name.charAt(0) -> will give us the char at provided index = A
+    name.indexOf("a") -> will give the index of first occurrence of provided char = 2
+    name.lastIndexOf("a") -> will give the index of first occurrence of provided char = 10
+    name.toUpperCase() -> will give the string in upper case = "AJAY BODAPATI"
+    name.toLowerCase() -> will give the string in lower case = "ajay bodapati"
+    name.trim() -> will remove the spaces before & after the string = "Ajay Bodapati"
+    name.replace("a", "b") -> will replace all a with b. = "Ajby Bodbpbti"
+    name.contains("a") -> will return boolean when string had provided char = true
+
+subString() : Method used to extract a portion of string.
+Ex: name.subString(startIndex, endIndex) -> endIndex is exclusive
+
+Ternary Operator: Uses ? to return 1 out of 2 values based on given condition.
+        variable = (condition) ? result1 : result2  => return result1 if condition is true else return result2
+Ex:
+    String result = score>45 ? "Pass" : "Fail";
+
+Switch : Replacement of using multiple if-else statements.
+Ex:
+    switch(variable){               /* break -> bring us out of loop */
+        case "Value1":
+            System.out.println(Value1);
+            break;
+        case "Value2":
+            System.out.println(Value2);
+            break;
+        default:
+            System.out.println("default");
+    }
+
+Enhanced switches: Easier way of using switches than traditional way
+Ex:
+    switch(variable){
+        case "value1" -> System.out.println(value1);
+        case "value2", "value3" -> System.out.println(value2 + "or" + value3);  -> will be executed for value2 or value3
+        default -> System.out.println("default");
+    }
+
+Logical operators; AND (&&), OR (||), NOT(!)
+    cond1 && cond2 => both conditions should be true
+    cond1 || cond2 => either one condition should be true
+    !cond1 => opposite of condition
+
+While Loop: Repeats the block of code forever while the condition remains true
+Ex:
+    String name = "";
+    while(name.isEmpty()){
+       System.out.print("Enter your name: ");
+       name = sc.nextLine();
+    }
+    System.out.print("Hello! "+name);
+
+Do-While Loop: We execute the block of code first and then check the condition
+Ex:
+    String name = "";
+    do{
+       System.out.print("Enter your name: ");
+       name = sc.nextLine();
+    }while(name.isEmpty())
+    System.out.print("Hello! "+name);
+
+For Loop: Repeats the block of code for certain number of times.
+Ex:
+    int n = 5;
+    for(int i =0; i<5; i++){                            => (initialisation of iterator; condition; increment or decrement of iterator)
+        System.out.println(i);   => 0,1,2,3,4
+        Thread.sleep(1000);      => will pause the loop for 1 sec
+    }
+
+* continue -> will skip the iteration
+* break -> will come out of the loop
+
+Nested Loops: A loop inside another loop. {like matrices, DSA}
+Ex: int n = 3;
+    int m = 9;
+    for (int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            System.out.print(i);
+        }
+    }
+
+Methods: Block of reusable block of code that are executed when called.
+Ex:
+    public static void main(String [] args){
+     int a = 3;
+     int b = 4;
+     System.out.println(sum(a,b));          /* a,b -> arguments*/
+    }
+    static int sum(x,y){                    /* x,y -> parameters*/
+        return x+y;
+    }
+
+   * need to declare the methods static if we are using them inside the static method (here main method is static)
+   * need to declare the data type of variable that we are returning from the method (here result of sum is int)
+
+Overloaded methods: Methods those share same name, but different number of parameters
+Ex:
+    static int sum(int x, int y){ return x+y;}
+    static int sum(int x, int y, int z){ return x+y+z;}
+
+Variable scope: where a variable can be accessed
+        - Local scope : Variable that is declared inside a method. Can only be accessed within the method and can't be used in another method even of same class.
+        - Global scope : Variable that is declared outside a method. Can be accessed within any method of class.
+
+    * Local variables have more priority than global variables inside methods
+
+Arrays : An array is a collection of values of same datatype.
+    Ex: String[] fruits = new String[3];
+    * Printing the array values
+        String fruits[] = {"Apple", "Banana", "Citrus"};
+        for( int i=0; i<3; i++ ){
+            System.out.println(fruits[i]);
+        } (or)
+        for(String fruit:fruits){
+            System.out.println(fruit);
+        }
+    * In an array, the starting values will be having index 0 and final value will be having index arrayLength-1
+    * To change values in array, fruits[1] = "Beetroot"
+    * To get length of array, "array.length"
+    * To sort arrays we need to import Arrays class then, Arrays.sort(fruits) -> will sort the fruits array in alphabetical order
+    * To fill arrays we need to import Arrays class then, Arrays.fill(fruits, "Guava") -> will fill the fruits array with "Guava"
+    * Taking values into array
+        String[] fruits = new String[3];
+        for( int i=0; i<3; i++ ){
+            fruits[i] = sc.nextLine();
+        }
+    * Print array as a string: System.out.println(String.join("|",fruits);
+
+Varargs : Variable arguments (varargs) allow a method to accept variable number of arguments that helps methods to be more flexible.
+            * Alternative for method overloading
+         Ex: static int sum(int... nums){}
+
+2D Arrays: An array where each element is an array. Useful to store matrix of data
+    Ex: String[][] foods = {{"apple", "banana"}, {"carrot", "beetroot"}};
+    * To change values in 2D array, foods[1][1] = "onion"
+
+Object Oriented Programming :
+
+Object : An entity that holds data(attributes) and can perform actions(methods). It is a reference data type.
+        To create objects we need a class. The class will serve as a blueprint.
+        Ex: public class Person{
+            String name = "Ajay";
+            int age = 21;
+            boolean isEmployed = true;
+            void printDetails(){
+                System.out.println(this.name + " is " + this.age + " years old.");
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+            Person person = new Person();
+            System.out.println(person.isEmployed);
+            person.printDetails();
+            }
+        }
+
+Constructors: A special method used to initialize the objects. We can pass arguments to constructor and set up initial values.
+        Ex: public class Person{
+                String name;
+                int age;
+                boolean isEmployed;
+                Person(String name, int age, boolean isEmployed){
+                    this.name = name;
+                    this.age = age;
+                    this.isEmployed = isEmployed;
+                }
+                void printDetails(){
+                   System.out.println(this.name + " is " + this.age + " years old.");
+                   }
+                }
+                public class Main{
+                    public static void main(String args[]){
+                    Person person1 = new Person("Ajay", 22, true);
+                    Person person2 = new Person("Senior", 22, true);
+                    person1.printDetails();
+                    person2.printDetails();
+                    }
+                }
+
+Overloaded Constructors: Allows a class to have multiple constructors with different parameter lists.
+                         Enable objects to initialize in various ways
+                Ex: public class Person{
+                        String name;
+                        int age;
+                        boolean isEmployed;
+                        Person(String name, int age, boolean isEmployed){
+                            this.name = name;
+                            this.age = age;
+                            this.isEmployed = isEmployed;
+                        }
+                        Person(String name, int age){
+                        this.name = name;
+                        this.age = age;
+                        this.isEmployed = true;
+                        }
+                        void printEmployement(){
+                               System.out.println(this.name + " is " + this.age + " years old and is Employed? " + this.isEmployed);
+                            }
+                     }
+                     public class Main{
+                        public static void main(String args[]){
+                        Person person1 = new Person("Ajay", 22, false);
+                        Person person2 = new Person("Senior", 22);
+                        person1.printEmployement();
+                        person2.printEmployement();
+                        }
+                     }
+
+Array of objects : Using array for collection of same objects
+                Ex:
+                public class Main{
+                    public static void main(String args[]){
+                        Person person1 = new Person("Ajay", 22, false);
+                        Person person2 = new Person("Senior", 22);
+                        Person person3 = new Person("Panneer", 23);
+                        Person person4 = new Person("Shannu", 22, false);
+                        Person[] persons = {person1, person2, person3, person4};
+                        for(Person person:persons){
+                            person.printEmployement();
+                        }
+                    }
+                }
+
+Static : Keyword that makes the variable or method belong to class rather than to any specific object.
+
+Inheritance : One class inherits the methods and attributes from another class.
+              Child << Parent
+              Ex: public class Animal{
+                    void eat(){
+                        System.out.println("The animal is eating");
+                    }
+              }
+              public class Dog extends Animal{
+                void bark(){
+                    System.out.println("Bow-bow");
+                }
+              }
+              }
+              public class Main{
+                public static void main(String args[]){
+                    Dog dog = new Dog();
+                    dog.eat();
+                    dog.bark()
+                }
+              }
+
+super() : Keyword refers to the parent class (subclass << superclass) used in constructors and method overriding
+        Calls the parent constructor for initializing attributes
+        Ex: public class Person{
+            String firstName;
+            String lastName;
+            Person(String firstName, String lastName){
+                this.firstName = firstName;
+                this.lastName = lastName;
+            }
+            void displayName(){
+                system.out.println(this.firstName + " " + this.lastName);
+            }
+        }
+        public class Student extends Person{
+            String gpa;
+            Student(String firstName, String lastName, String gpa){
+                super(firstName, lastName);
+                this.gpa = gpa;
+            }
+            void showGpa(){
+                system.out.println(this.firstName + " " + this.lastName + "'s GPA is " + this.gpa);
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+                Student student = new Student("Ajay", "BODAPATI", "9.34");
+                student.displayName();
+                student.showGpa();
+            }
+        }
+
+Method overriding : Writing subclass's own implementation of a method that is already defined in parent class.
+                    Allows code reusability and specific implementation
+         Ex: public class Animal{
+                void eat(){
+                    System.out.println("The animal is eating");
+                }
+             }
+             public class Dog extends Animal{
+                void bark(){
+                    System.out.println("Bow-bow");
+                }
+                @Override
+                void eat(){
+                    System.out.println("Dog is eating");
+                }
+             }
+             public class Main{
+                public static void main(String args[]){
+                    Dog dog = new Dog();
+                    dog.eat();
+                    dog.bark()
+                }
+             }
+
+toString() : Method inherited from Object class used to return string representation of an object.
+             By default, it returns hash code as a unique identifier, it can be overridden to provide meaningful details.
+           Ex: public class Car{
+               String model;
+               String make;
+               Car(string model, String make){
+                this.make = make;
+                this.model = model;
+               }
+               @Override
+               public string toString(){
+                return this.make + this.model;
+               }
+           }
+           public class Main{
+            public static void main(String args[]){
+                Car car = new Car("Fortuner", "Toyota");
+                System.out.println(car);  // Toyota Fortuner
+              }
+           }
+
+Abstraction : It is the process of hiding implementation details and showing only essential features.
+                * abstract -> used to make abstract classes and methods
+                * Abstract classes can't be instantiated directly
+                    - can contain abstract methods (which must be implemented by children)
+                    - can contain concrete methods (which are inherited by children)
+            Ex: public abstract class Shape{
+                abstract void area(){} //abstract method
+                void display(){  //concrete method
+                    System.out.println("This is a shape");
+                }
+            }
+            public class Circle extends Shape{
+                double radius;
+                Circle(double radius){
+                    this.radius = radius;
+                }
+                @Override
+                double area(){
+                    return Math.PI * radius * radius;
+                }
+            }
+            public class Rectangle extends Shape{
+                double length;
+                double breadth;
+                Rectangle(double length, double breadth){
+                    this.length = length;
+                    this.breadth = breadth;
+                    }
+                @Override
+                double area(){
+                    return length * breadth;
+                }
+            }
+            public class Main{
+                public static void main(String args[]){
+                    Circle circle = new circle(2.5);
+                    Rectangle rect = new Rectangle(4.5,5.6);
+                    System.out.println(circle.area());
+                    circle.display();
+                    System.out.println(rect.area());
+                     rect.display();
+                }
+            }
+
+Interface : A blueprint of a class that specifies a set of abstract methods that implementing classes MUST define.
+            Supports multiple inheritance-like behaviour.
+          Ex: public interface Prey{
+            void run(){}
+          }
+          public interface Predator{
+            void hunt(){}
+          }
+          public class Rabbit implements Prey{
+            @Override
+            public void run(){
+                System.out.println("The rabbit is running");
+            }
+          }
+          public class Fish implements Prey, Predator{
+            @Override
+            public void run(){
+                System.out.println("The fish is running");
+            }
+            @Override
+            public void hunt(){
+                System.out.println("The fish is hunting");
+            }
+          }
+         public class Main{
+            public static void main(String args[]){
+                Rabbit rabbit = new Rabbit();
+                Fish fish = new Fish();
+                rabbit.run();
+                fish.hunt();
+                fish.run()
+            }
+         }
+
+Polymorphism : Objects can identify as different objects. Objects can be treated as objects of common superclass.
+        Ex: public abstract class Vehicle{
+            abstract void Go(){}
+        }
+        public class Car extends Vehicle{
+            @Override
+            void Go(){
+                System.out.println("Driving the car");
+            }
+        }
+        public class Bike extends Vehicle{
+            @Override
+            void Go(){
+                System.out.println("Riding the bike");
+            }
+        }
+        public class Ship extends Vehicle{
+            @Override
+            void Go(){
+                System.out.println("Sailing the ship");
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+                Bike bike = new Bike();
+                Car car = new Car();
+                Ship ship = new Ship();
+
+                Vehicle[] vehicles =  {bike, car, ship};
+                for(Vehicle vehicle: vehicles)    {
+                    vehicle.go();
+                }
+            }
+        }
+
+Run-time polymorphism: The method that gets executed is decided at the runtime based on actual type of object.
+        Ex: public abstract class Animal{
+            abstract void speak(){}
+        }
+        public class Dog extends Animal{
+            @Override
+            public void speak(){
+                System.out.println("Bow-bow");
+            }
+        }
+        public class Cat extends Animal{
+            @Override
+            public void speak(){
+                System.out.println("Meow-meow");
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+                Scanner sc = new Scanner(System.in);
+                Animal animal;
+                System.out.println("1.Dog 2.Cat");
+                int choice = sc.nextInt();
+
+                if(choice == 1){
+                    animal = new Dog();
+                }else{
+                    animal = new Cat();
+                }
+                animal.speak();
+                sc.close();
+            }
+        }
+
+Getters & Setters: They help to protect object data and add rules for accessing or modifying them.
+    - Getter -> method that makes the field readable
+    - Setter -> method that makes the field writable
+    Ex: public class Car{
+            private String model;
+            private String color;
+            Car(String model, String color){
+                this.model = model;
+                this.color = color;
+            }
+            String getModel(){
+                return this.model;
+            }
+            String getColor(){
+                return this.color;
+            }
+            void setColor(String color){
+                this.color = color;
+            }
+            void setModel(String model){
+                this.model = model;
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+                Car car = new Car(Fortuner, Black);
+                System.out.println(car.getColor() + " " + car.getModel());
+                car.setColor("White");
+                System.out.println(car.getColor() + " " + car.getModel());
+            }
+        }
+
+Aggregation : One object contains another object/s as part of its structure, but the contained object/s can exist independently.
+        Ex: public class Book{
+                String name;
+                int pages;
+                Book(String name, int pages){
+                    this.name = name;
+                    this.pages = pages;
+                }
+                void displayDetails(){
+                    System.out.println(this.name + " (" + this.pages + " pages)");
+                }
+            }
+            public class Library{
+                String name;
+                int year;
+                Book[] books;
+                Library(String name, int year, Book[] books){
+                    this.name = name;
+                    this.year = year;
+                    this.books = books;
+                }
+                void displayInfo(){
+                    System.out.println(this.name + " " + this.year);
+                    System.out.println("Books Available:");
+                    for(Book book : books){
+                        book.displayDetails();
+                    }
+                }
+            }
+            public class Main{
+                public static void main(String args[]){
+                    Book book1 = new Book("The Tales", 274);
+                    Book book2 = new Book("The Twin Stories", 169);
+                    Book book3 = new Book("Never Settle", 624);
+                    Book[] books = {book1, book2, book3};
+                    Library library = new Library("DICE Library", 2023, books);
+                    library.displayInfo();
+                }
+            }
+
+Composition: One object contains another object/s as part of its structure. The contained object/s are not used directly by main class.
+Ex: public class Engine{
+                String type;
+                Engine(String type){
+                    this.type = type
+                }
+            }
+            public class Car{
+                String model;
+                String color;
+                Engine engine;
+                Car(String model, String color, String engineType){
+                    this.model = model;
+                    this.color = color;
+                    this.engine = new Engine(engineType);
+                }
+                void displayInfo(){
+                    System.out.println(this.color + " " + this.model + " " + this.engine.type);
+                    }
+                }
+            }
+            public class Main{
+                public static void main(String args[]){
+                    Car car = new Car("Fortuner", "Black", "V8");
+                    car.displayInfo();
+                }
+            }
+
+Wrapper classes: Allows primitive values (int, double, char, boolean) to be used as objects.
+                 - Generally, we don't wrap primitives unless we need an object
+                 - Allows use of collections framework and static utility methods
+        Ex:  Integer a = 12;    // Integer a = new Integer(12)
+             Double b = 12.34;  // Double b = new Double(12.34)
+             Character c = '$'; // Character c = new Character('$')
+             Boolean d = true;  // Boolean d = new Boolean(true)
+
+             int x = a;    // Converts wrapper class Integer object to primitive type
+
+             String w = Integer.toString(123);        // Convert primitive types to Strings.
+             String x = Double.toString(123.4);
+             String y = Character.toString('$');
+             String z = Boolean.toString(true);
+
+             int a = Integer.parseInt("123");          // Convert strings to primitive types.
+             double b = Double.parseDouble("123.45");
+             boolean c = Boolean.parseBoolean("true");
+
+             char var = 'b';
+             System.out.println(Character.isLetter(var));    //boolean - true if letter, false if digit or symbol
+             System.out.println(Character.isDigit(var));    //boolean - true if digit, false if letter or symbol
+             System.out.println(Character.isWhitespace(var));    //boolean - true if space, false if not whitespace
+             System.out.println(Character.isUpperCase(var));    // boolean - true if uppercase letter, false if not a uppercase letter
+             System.out.println(Character.isLowerCase(var));    // boolean - true if lowercase letter, false if not a lowercase letter
+             System.out.println(Character.toUpperCase(var));    // char - returns uppercase form of specified char value
+             System.out.println(Character.toLowerCase(var));    // char - returns lowercase form of specified char value
+
+Array List : Resizable array that stores objects. Arrays are of fixed size but Arraylists can change size (dynamic).
+            Ex: ArrayList<Integer> al = new ArrayList<>();
+                ArrayList<String> fruits = new ArrayList<>();
+                    fruits.add("Apple")     -> adding element to array list
+                    fruits.remove(0)        -> remove element at 0th index from array list
+                    fruits.set(1, "banana")    -> set element at index 1
+                    fruits.get(0)           -> returns element at index 0
+                    fruits.size()           -> returns size of array list
+                    Collections.sort(fruits) -> will sort the array list in alphabetical order
+
+Exceptions : An event that interrupts the normal flow of a program (like dividing by 0, file not found, mismatch input type).
+                - try{} -> contains the block of code that may cause exceptions, and throws the exception.
+                - catch(){} -> follows the try block and catches the exceptions thrown from try block.
+                - finally{} -> contains the block of code that is always executed irrespective of exceptions.
+         Ex: try{
+            System.out.print("Enter your number");
+            int a = sc.nextInt();
+            System.out.println("Your number: " + a);
+         }
+         catch(InputMismatchException e){
+            System.out.println("That wasn't an integer");
+         }
+         catch(Exception e){
+            System.out.println("An exception caught");
+         }
+        finally{
+            System.out.println("Program executed");
+        }
+
+        * we can have multiple catch blocks with different exception types
+
+Write Files: 4 ways to write a file using Java
+            1. FileWriter -> Good for small or medium-sized text files
+            2. BufferedWriter -> Better performance with large amounts of text
+            3. PrintWriter -> Best for structured data, like reports or logs
+            4. FileOutputStream -> Best for binary files (images, audio files)
+
+        Ex: try(FileWriter writer = new FileWriter("test.txt")){
+            writer.write("I am Ajay");
+            System.out.println("File has been edited");
+        }
+        catch(FileNotFoundException e){
+            System.out.println("FileNotFoundException caught - Could not locate file");
+        }
+        catch(IOException e){
+            System.out.println("IOException caught - Could not write file");
+        }
+
+Read Files: 3 ways to read a file using Java
+            1. FileReader + BufferedReader -> Best for reading text files line-by-line
+            2. FileInputStream -> Best for binary files (images, audio files)
+            3. RandomAccessFile -> Best for read/write specific portion of large file
+
+         Ex: String filePath = "C:\\Users\\Desktop\\test.txt"
+             try(BufferReader reader = new BufferReader(new FileReader(filePath))){
+                String line;
+                while((line=reader.readLine()) != null){
+                    System.out.println(line);
+                }
+             }
+             catch(FileNotFoundException e){
+                System.out.println("FileNotFoundException caught - Could not locate file");
+             }
+             catch(IOException e){
+                System.out.println("IOException caught - Could not write file");
+             }
+             finally{
+                reader.close();
+             }
+
+Audio Player : can play only (.wav, .au, .aiff) files.
+
+            Ex: String filePath="src/helloSong.wav";
+                File file = new File(filePath);
+                try(AudioInputStream audioStream = AudioSystem.getAudioInputStream(file),
+                    Scanner sc = new Scanner(System.in)){
+                    Clip clip = AudioSystem.getClip();    //acts as audio player (Play, stop, reset)
+                    clip.open(audioStream);
+                    String response = "";
+                    while(!(response.equals("Q")){
+                        System.out.println("P-Play S-Stop R-Reset Q-Quit");
+                        System.out.print("Enter your choice: ");
+                        response = sc.next().toUpperCase();
+
+                        switch(response){
+                            case "P" -> clip.start();
+                            case "S" -> clip.stop();
+                            case "R" -> clip.setMicrosecondPosition(0);
+                            case "Q" -> clip.close();
+                            default -> Syatem.out.println("Invalid choice!");
+                        }
+                    }
+
+                }
+                catch(FileNotFoundException e){
+                    System.out.println("FileNotFoundException caught - Could not locate file");
+                }
+                catch(UnsupportedAudioFileException e){
+                    System.out.println("Audio file not supported");
+                }
+                catch(LineUnavailableException e){
+                    System.out.println("Unable to access audio resource");
+                }
+                catch(IOException e){
+                    System.out.println("Something went wrong");
+                }
+                finally{
+                    System.out.println("Bye!!");
+                }
+
+Dates & Times : We can work with LocalDate, LocalTime, LocalDateTime, UTC timestamp
+            Ex: LocalDate date = LocalDate.now();
+                LocalTime time = LocalTime.now();
+                LocalDateTime dateTime = LocalDateTime.now();
+                Instant instant = Instant.now();
+
+                //Custom Format
+                LocalDateTime dateTime = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+                String newDateTime = dateTime.format(formatter);
+                System.out.println(newDateTime);
+
+                //Compare dates
+                LocalDateTime dateTime1 = LocalDateTime.of(2026, 12, 25, 06, 55, 45);   //2026-12-25T06:55
+                LocalDateTime dateTime1 = LocalDateTime.of(2027, 01, 01, 00, 00, 00);   //2027-01-201T00:00
+                if(date1.isBefore(date2)){
+                    System.out.println(date1 + " is before " + date2);
+                }else if(date1.isAfter(date2)){
+                    System.out.println(date1 + " is after " + date2);
+                }else if(date1.isEqual(date2)){
+                    System.out.println(date1 + " is same as " + date2);
+                }
+
+Anonymous class : A class that doesn't have a name. Cannot be reused
+                  Add custom behaviour without having to create a new class.
+                  Often used for onetime uses (TimerTask, Runnable, callbacks)
+               Ex: public class Dog{
+                    void speak(){
+                        System.out.println("Bow-bow");
+                    }
+               }
+               public class Main{
+                public static void main(String args[]){
+                    Dog dog1 = new Dog();
+                    Dog dog2 = new Dog(){  //Instead of creating new class for talking dog, we can create a anonymous class
+                        @Override
+                        void speak(){
+                            System.out.println("Hello!");
+                        }
+                    };
+                    dog1.speak();
+                    dog2.speak();
+                }
+               }
+
+Timer Tasks: Timer -> Class that schedules tasks at specific times or periodically
+                      Useful for sending notifications, schedule updates, repetitive actions
+             TimerTask -> Represents the task that will be executed by Timer
+                          We  will use the TimerTask class to define the task and create a subclass of TimerTask and @Override run()
+
+           Ex: Timer timer = new Timer();
+               TimerTask task = new TimerTask(){
+                    int count = 3;
+                    @Override
+                    public void run(){
+                        System.out.println("Hello!");
+                        count--;
+                        if(count<=0){
+                            System.out.println("Task Completed");
+                            timer.cancel();
+                        }
+                    }
+               };
+               timer.schedule(task, 1000);  (task, start-delay)
+               timer.schedule(task, 0, 1000); (task, start-delay, periodic-delay)
+
+Generics : Helps us in writing a class, interface or method that is compatible with different data types.
+            <T> -> type parameter (placeholder that get replaced with real type)
+            <String> -> type argument (specifies the type)
+         Ex: public class Thing<T>{
+                T item;
+                public void setItem(T item){
+                    this.item = item;
+                }
+                public T getItem(){
+                    return this.item;
+                }
+         }
+         public class Main{
+            public static void main(String args[]){
+                Thing<String> thing1 = new Thing<>();
+                Thing<int> thing2 = new Thing<>();
+                Thing<double> thing3 = new Thing<>();
+                thing1.setItem("Ajay");
+                thing2.setItem(1);
+                thing3.setItem(1.23);
+                System.out.println(thing1.getItem());   //Ajay
+                System.out.println(thing2.getItem());   //1
+                System.out.println(thing3.getItem());   //1.23
+            }
+         }
+      * We can have multiple type parameters for single generic class/interface/method  -> <T, U>
+
+Hashmaps : A data structure that stores key-value pairs
+           Keys are unique, but values can be duplicate
+           Doesn't maintain any order, but is memory efficient
+           HashMap<Key, Value>
+     Ex: HashMap<String, Double> products = new HashMap<>();
+         products.put("Apple", 25);   // store key value pair in hashmap
+         products.put("Banana", 15);
+         products.put("Coconut", 40);
+         products.put("Apple", 30);   // Duplicate key will overwrite the existing key value pair
+         products.remove("Banana");   // Will remove key value pair from hashmap
+
+         System.out.println(products);               // {Apple=30, Coconut=40}
+         System.out.println(products.get("Apple"));  // Will give us the value of the key from hashmap
+         System.out.println(products.containsKey("Apple")); // Will give us the boolean result of key existence
+         System.out.println(products.containsValue(30));    // Will give us the boolean result of value existence
+         System.out.println(products.size());               // Will give us the of the hashmap size
+         for(String key : products.keySet()){               // will result the keys set of the hashmap
+            System.out.println(key + " : " + products.get(key));
+         }
+
+Enums : (Enumerations) A special type of class that represent a fixed set of constants
+        They improve code readability and are easy to maintain
+        More efficient with switches when comparing Strings
+        Ex: public enum Day{
+            SUN(1), MON(2), TUE(3), WED(4), THR(5), FRI(6), SAT(7);
+            private final int dayNumber;
+            Day(int dayNumber){
+                this.dayNumber = dayNumber;
+            }
+            public int getDayNumber(){
+                return this.dayNumber;
+            }
+        }
+        public class Main{
+            public static void main(String args[]){
+                Day day = Day.SUN;
+                System.out.println(day);                //SUN
+                System.out.println(day.getDayNumber()); //1
+                switch(day){
+                    case MON, TUE, WED, THR, FRI -> System.out.println("Weekday)";
+                    case SAT, SUN -> System.out.println("Weekend");
+                    default -> System.out.println("Not a valid day");
+                }
+            }
+        }
+
+Threads : Allows a program to run multiple tasks simultaneously
+          Helps improve performance with time-consuming operations
+          (File I/O, network connections or any background tasks)
+      Ex: public class MyRunnable implements Runnable{
+            @Override
+            public void run(){
+                for(int i=1; i<=10; i++){
+                    try{
+                        Thread.sleep(1000);   // will pause the task for 1 sec
+
+                    }
+                    catch(InterruptedException e){
+                        System.out.println(e.getMessage());
+                    }
+                    if(i==10){
+                        System.out.println("Time's up!");
+                        System.exit(0);                     // Makes the process to exit
+                    }
+                }
+            }
+      }
+          public class Main{
+            public static void main(String args[]){
+                Scanner sc = new Scanner(System.in);
+                System.out.println("You have 10 sec to enter your name!");
+                MyRunnable myRunnable = new MyRunnable();
+                Thread thread = new Thread(myRunnable);     // Creating thread for our runnable interface
+                thread.setDaemon(true);                     // Helps in exiting the threads when our main thread ends
+                thread.start();                             // starts the thread
+                System.out.print("Enter your name: ");
+                String name = sc.nextLine();
+                System.out.println("Hello! "+name);
+                sc.close();
+            }
+          }
+
+Multi-threading : Enables a program to run multiple threads concurrently
+                  (thread -> set of instructions those run independently)
+                  Useful for background tasks or time-consuming operations
+           Ex: public class MyRunnable implements Runnable{
+                    @Override
+                    public void run(){
+                        for(int i=1; i<=5; i++){
+                            try{
+                                Thread.sleep(1000);
+                            }catch(Exception e){
+                                System.out.println(e.getMessage());
+                            }
+                            System.out.println(i);
+                            System.out.println(Thread.currentThread().getName()); //Will give us name for current running thread
+                        }
+                    }
+               }
+               public class Main{
+                    public static void main(String args[]){
+                        System.out.println("Hello!");
+                        MyRunnable myRunnable = new MyRunnable();
+                        Thread thread1 = new Thread(myRunnable);
+                        Thread thread2 = new Thread(myRunnable);
+                        thread1.start();
+                        thread2.start();
+                        try{
+                            thread1.join();         //Will make the main thread wait until thread completes
+                            thread2.join();
+                        }catch(Exception e){
+                            System.out.println(e.getMessage());
+                        }
+                        System.out.println("Thank You!");
+                    }
+               }
